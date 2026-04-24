@@ -31,7 +31,7 @@ The solution combines data preprocessing, customer segmentation (RFM), predictiv
 ---
 
 ## 📊 Dashboard Preview
-![Dashboard](dashboard.png)
+![Dashboard](Dashboard.png)
 
 ---
 
