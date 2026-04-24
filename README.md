@@ -1,78 +1,208 @@
-# 📊 Retail Analytics & Churn Prediction Dashboard
+# NeuralRetail Analytics Platform
 
-## 📌 Overview
-This project is an end-to-end Retail Analytics solution that transforms raw transaction data into actionable business insights and predicts customer churn using machine learning.
-
-The solution combines data preprocessing, customer segmentation (RFM), predictive modeling, and an interactive Streamlit dashboard for real-time analytics.
+End-to-end Retail Analytics and Customer Churn Prediction system built using Python, Machine Learning, Streamlit, FastAPI, MLflow, and Docker.
 
 ---
 
-## 🚀 Key Features
+## 🚀 Project Overview
 
-- 🔹 Data Cleaning & Preprocessing using Python (Pandas)
-- 🔹 Exploratory Data Analysis (EDA)
-- 🔹 RFM (Recency, Frequency, Monetary) Customer Segmentation
-- 🔹 Customer Churn Prediction using Machine Learning
-- 🔹 Feature Engineering for improved model performance
-- 🔹 Interactive Dashboard built with Streamlit & Plotly
-- 🔹 Business insights on revenue, customers, and demand trends
+This project analyzes retail transaction data to generate business insights and predict customer churn risk.
+
+It demonstrates how raw business data can be transformed into actionable insights and deployed as a production-ready machine learning system.
 
 ---
 
-## 🛠️ Tech Stack
+## 🎯 Why This Project
 
-- Python (Pandas, NumPy)
-- Scikit-learn
-- Streamlit
-- Plotly
-- Excel
-- Git & GitHub
+This project showcases the full lifecycle of a data-driven solution—from data processing and modeling to deployment and production readiness.
+
+It highlights the ability to:
+
+* Translate business problems into ML solutions
+* Build interactive analytics dashboards
+* Deploy models as real-time APIs
+* Implement MLOps practices for scalability
 
 ---
 
-## 📊 Dashboard Preview
+## 📈 Business Impact
+
+* Identified high-risk churn customers using predictive modeling
+* Enabled data-driven decision making through KPI dashboards
+* Improved visibility into customer behavior and revenue trends
+* Provided a scalable solution for real-time churn prediction
+
+---
+
+## 🏗️ Architecture
+
+```
+Raw Data → Data Cleaning → Feature Engineering → ML Model
+            ↓
+      Streamlit Dashboard (Visualization)
+
+ML Model → FastAPI API → Docker Container
+        ↓
+     MLflow Tracking (Experiments)
+```
+
+---
+
+## 📊 Features
+
+### 🔹 Analytics
+
+* Revenue tracking and KPIs
+* Customer segmentation
+* Country-level insights
+* Sales trend visualization
+
+### 🔹 Machine Learning
+
+* Logistic Regression churn model
+* Feature engineering (orders, spend, lifetime)
+* Probability-based predictions
+
+### 🔹 Dashboard (Streamlit)
+
+* Executive overview
+* Customer insights
+* Churn analysis
+* Filters (date, country)
+
+---
+
+## 🤖 Model Details
+
+* **Algorithm:** Logistic Regression
+* **Features Used:**
+
+  * TotalOrders
+  * TotalQuantity
+  * TotalSpend
+  * CustomerLifetime
+  * AvgOrderValue
+* **Output:**
+
+  * Churn prediction (0 or 1)
+  * Churn probability score
+
+---
+
+## ⚙️ Advanced MLOps Layer
+
+### 🔹 MLflow
+
+* Experiment tracking
+* Metrics logging (accuracy, recall)
+* Model artifact storage
+
+### 🔹 FastAPI
+
+* REST API for real-time predictions
+* Endpoint: `/predict`
+
+### 🔹 Docker
+
+* Containerized API deployment
+* Portable and scalable system
+
+---
+
+## 🔌 API Preview
+
+**POST /predict**
+
+```json
+{
+  "TotalOrders": 3,
+  "TotalQuantity": 20,
+  "TotalSpend": 500,
+  "CustomerLifetime": 120,
+  "AvgOrderValue": 166.6
+}
+```
+
+**Response:**
+
+```json
+{
+  "prediction": 0,
+  "churn_probability": 0.477
+}
+```
+
+---
+
+## 🖥️ Dashboard
+
 ![Dashboard](Dashboard.png)
 
 ---
 
-## 📈 Model Performance
+## 📁 Project Structure
 
-- Accuracy: ~70%
-- Improved Recall for Churn Detection (~80%)
-- Balanced Precision-Recall tradeoff for business usability
-
----
-
-## 🧠 Key Insights
-
-- Majority of revenue is driven by a small number of countries
-- High-value customers contribute significantly to total sales
-- Customer churn can be predicted using behavioral patterns
-- Recency is a strong indicator of churn risk
-
----
-
-## 💼 Business Impact
-
-- Helps identify customers likely to churn
-- Enables targeted marketing and retention strategies
-- Improves customer lifetime value (CLV)
-- Supports data-driven decision making
-
----
-
-## 📂 Project Structure
-NeuralRetail_Project/
-├── data/
-│   ├── processed/
-│   ├── raw/
-├── notebooks/
-│   └── data_cleaning.ipynb
-├── outputs/
-├── src/
-├── app.py
-├── Dashboard.png
-├── Dashboard2.png
-├── LICENSE
-├── README.md
+```
+NeuralRetail_Project_Advanced/
+│
+├── api/                 # FastAPI + model
+├── mlops/               # MLflow tracking
+├── docker/              # Docker setup
+├── data/                # raw + processed data
+├── notebooks/           # data analysis
+├── app.py               # Streamlit dashboard
 ├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. Run Dashboard
+
+```bash
+streamlit run app.py
+```
+
+### 2. Run API
+
+```bash
+python -m uvicorn api.main:app --reload
+```
+
+### 3. Run with Docker
+
+```bash
+docker build -f docker/Dockerfile.api -t neuralretail-api .
+docker run -p 8000:8000 neuralretail-api
+```
+
+---
+
+## 💼 Skills Demonstrated
+
+* Data Analysis & Feature Engineering
+* Machine Learning (Scikit-learn)
+* Data Visualization (Streamlit)
+* API Development (FastAPI)
+* Experiment Tracking (MLflow)
+* Containerization (Docker)
+* End-to-End System Design
+
+---
+
+## 🎯 Outcome
+
+Built a production-ready retail analytics system capable of:
+
+* Delivering business insights
+* Predicting churn risk
+* Serving real-time predictions via API
+* Deploying in a containerized environment
+
+---
+
+## 👨‍💻 Author
+
+Mirza Sharif Baig
